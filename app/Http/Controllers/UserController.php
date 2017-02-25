@@ -22,7 +22,7 @@ class UserController extends Controller
                 'password_confirmation' => 'required|same:password',
             ],
             [
-                'current_password.required' => 'Vui lòng nhập mật khẩu',
+                'current_password.required' => 'Nhập Mật Khẩu',
                 'password.required' => 'Vui lòng nhập mật khẩu',
                 'password_confirmation.required'=>'Vui lòng nhập lại mật khẩu',
                 'password_confirmation.same'=>'Nhập lại mật khẩu không đúng'
@@ -35,7 +35,7 @@ class UserController extends Controller
                 $obj_user = User::find($user_id);
                 $obj_user->password = Hash::make($request->password);
                 $obj_user->save(); 
-                return redirect('password/change')->with('thongbao','Thay đổi mật khẩu thành công');
+                return redirect('password/change')->with('thongbao','Thay đổi  thành công');
             }
             else
             {           
