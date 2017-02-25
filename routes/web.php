@@ -79,6 +79,8 @@ Route::get('/logout','HomeController@logout');
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/login', 'HomeController');
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
