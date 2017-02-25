@@ -51,7 +51,7 @@ class UserController extends Controller
                 'ten'=>'required',
             ],
             [
-                'ten.required'=>'Vui lòng nhập tên',
+                'ten.required'=>'Vui lòng nhập tên....',
             ]
             );
             $user_id = Auth::user()->id;                       
