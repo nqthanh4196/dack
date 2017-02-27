@@ -15,7 +15,7 @@ class ClassifyComposer
         $data = Classify::all();
         $cate= Categories::all();
         $view->with(['data'=>$data,'cate'=>$cate]) ;
-         $cates= Categoriess::all();
+         
 
     }
 }
