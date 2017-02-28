@@ -14,7 +14,7 @@ class Categories extends Model
     	return $this->hasMany('App\Classify','id_danhmucsp','id');
     }
 
-    public function product()
+    public
     {
     	return $this->hasManyThrough('App\Product','App\Classify','id_danhmucsp','idloai');
     }
