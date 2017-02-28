@@ -27,7 +27,7 @@
                     <span>Xắp xếp</span>
                     <select>
                         <option selected>-</option>
-                        <option>Sản phẩm mới</option>
+                        <option>Sản phẩm mới Nhất</option>
                         <option>Giá từ thấp đến cao</option>
                         <option>Giá từ cao đến thấp</option>
                     </select>
@@ -68,7 +68,7 @@
                         <span>Sắp xếp</span>
                         <select>
                             <option selected>-</option>
-                            <option>Sản phẩm mới</option>
+                            <option>Sản phẩm mới nhất</option>
                             <option>Giá từ thấp đến cao</option>
                             <option>Giá từ cao đến thấp</option>
                         </select>

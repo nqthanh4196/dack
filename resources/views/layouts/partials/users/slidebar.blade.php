@@ -15,7 +15,7 @@
             <li>
                 <a href="#coll3" data-toggle="collapse"><i class="fa fa-cube fa-fw" ></i>Thông tin người dùng <b class="caret"></b></a>
                 <ul class="collapse" id="coll3">
-                    <li><a href="/myaccount">Thay đổi thông tin cá nhân</a></li>
+                    <li><a href="/myaccount">Thay đổi thông tin  </a></li>
                     <li><a href="/password/change">Thay đổi mật khẩu</a></li>
                 </ul>
             </li>
