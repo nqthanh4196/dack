@@ -12,6 +12,6 @@ class ProductComposer
     public function getProduct(View $view)
     {
         $pro = Product::paginate(12);
-        $view->with('pro',$pro);
+        $view->with('pro',$pro); 
     }
 }
