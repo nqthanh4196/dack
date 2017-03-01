@@ -38,7 +38,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', true),
+    'debug' => env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -123,7 +123,6 @@ return [
     'log' => env('APP_LOG', 'single'),
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
-    'NoCaptcha' => 'Anhskohbo\NoCaptcha\Facades\NoCaptcha',
 
     /*
     |--------------------------------------------------------------------------
@@ -178,21 +177,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\ComposerServiceProvider::class,
-
-        // Laravel Framework Service Providers...
-        //...
-
-        // Package Service Providers
-        TCG\Voyager\VoyagerServiceProvider::class,
-        // ...
-
-        // Application Service Providers
-        // ...
-        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
-
-        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
-
 
     ],
 
@@ -241,10 +225,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
-
 
     ],
 
-  
 ];

@@ -18,7 +18,6 @@ return [
 
     'driver' => env('MAIL_DRIVER', 'smtp'),
 
-
     /*
     |--------------------------------------------------------------------------
     | SMTP Host Address
@@ -30,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
 
     /*
     |--------------------------------------------------------------------------
@@ -57,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'chauhoaiduc96@gmail.com',
-        'name' => 'Hoài Đức',
+        'address' => 'hello@example.com',
+        'name' => 'Example',
     ],
 
     /*
@@ -85,7 +84,7 @@ return [
     |
     */
 
-    'username' => env('chauhoaiduc96@gmail.com'),
+    'username' => env('MAIL_USERNAME'),
 
     /*
     |--------------------------------------------------------------------------
@@ -98,7 +97,7 @@ return [
     |
     */
 
-    'password' => env('wcivssfunqioeqah'),
+    'password' => env('MAIL_PASSWORD'),
 
     /*
     |--------------------------------------------------------------------------
@@ -112,5 +111,5 @@ return [
     */
 
     'sendmail' => '/usr/sbin/sendmail -bs',
-    'pretend' => false,
+
 ];
