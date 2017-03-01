@@ -1,5 +1,4 @@
 {
-    "google/recaptcha": "~1.1",
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
@@ -7,11 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
-        "laravel/framework": "5.3.*",
-        "anhskohbo/no-captcha": "^2.2",
-        "swiftmailer/swiftmailer": "^5.4",
-        "tcg/voyager": "^0.10.7",
-        "gloudemans/shoppingcart": "^2.2"
+        "laravel/framework": "5.3.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
