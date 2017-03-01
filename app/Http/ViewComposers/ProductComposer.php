@@ -14,8 +14,5 @@ class ProductComposer
         $pro = Product::paginate(12);
         $view->with('pro',$pro); 
     }
-    public function Error (View $view)
-    {
-    	
-    }
+
 }
