@@ -15,8 +15,9 @@ Route::get('/','UserController@getSanPham');
 
 Route::get('/shop', 'UserController@getDanhMucSanPham');
 
-Route::get('/home','UserController@getDanhSachGiaSanPham;');
+Route::get('/GiaSP','UserController@getDanhSachGiaSanPham;');
 
+Route::get('/Error','UserController@Error');
 Route::get('/contact', function () {
     return view('contact');
 });
