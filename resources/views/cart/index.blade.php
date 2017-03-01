@@ -21,7 +21,7 @@
 								
 								<thead>
 									<tr>
-										<td>Tên sản phẩm</td>
+										<td>Tên </td>
 										<td>Giá</td>
 										<td>Số lượng</td>
 										<td>Tổng tiền</td>
@@ -63,7 +63,7 @@
 							<p>Free shipping</p>
 							<p>Tổng tiền <?php echo Cart::subtotal(); ?></p>
 
-							<a href="/checkout"  class="checkout">Thanh toán</a>
+							<a href="/checkout"  class="checkout">Thanh TSPoán</a>
 						</div>
 					</div>
 				</div>
