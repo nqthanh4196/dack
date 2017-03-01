@@ -82,8 +82,9 @@ class ProductController extends Controller
         $link = "img/".str_random(4)."_".$path->getClientOriginalName();
         while (file_exists("/img".$link)) 
         {
+
             $link = "img/".str_random(4)."_".$path->getClientOriginalName();
-            
+            $link = "img/png ".str_random(4)."_".$path->getClientOriginalName();
             
         }
 
