@@ -1618,8 +1618,8 @@ header.style-2 .nav-wrapper .shopping-bag .total {
   margin-left: 10px;
   text-transform: uppercase;
 }
-header.style-2 .nav-wrapper .shopping-bag .total:after {
-  content: "VND";
+header.style-2 .nav-wrapper .shopping-bag .total:before {
+  content: "$";
 }
 @media (max-width: 991px) {
   header.style-2 .nav-wrapper .shopping-bag .total {
@@ -2103,8 +2103,8 @@ header.style-3 .logo-banner .bag-social .shopping-bag .bag-container .total {
   margin-left: 12px;
   text-transform: uppercase;
 }
-header.style-3 .logo-banner .bag-social .shopping-bag .bag-container .total:after {
-  content: "VND";
+header.style-3 .logo-banner .bag-social .shopping-bag .bag-container .total:before {
+  content: "$";
 }
 header.style-3 .logo-banner .bag-social .shopping-bag .cart-items-wrapper {
   top: 33px;
@@ -2939,18 +2939,18 @@ header.style-3 .categories-nav .search-form .search-submit:hover + .icon {
   color: #fff;
 }
 .main-slider.style-2 .slider-wrapper ul li .product-info p {
-  color: red;
+  color: #666;
 }
 .main-slider.style-2 .slider-wrapper ul li:first-of-type {
-  background: url(/img/chuot-cover.png) top center;
+  background: url(../img/MSI-cover.jpg) top center;
   background-size: cover;
 }
 .main-slider.style-2 .slider-wrapper ul li:nth-of-type(2) {
-  background: url(/img/ban-phim-cover.jpg) top center;
+  background: url(../img/ban-phim-cover.jpg) top center;
   background-size: cover;
 }
 .main-slider.style-2 .slider-wrapper ul li:nth-of-type(3) {
-  background: url(/img/MSI-cover.jpg) top center;
+  background: url(../img/chuot-cover.png) top center;
   background-size: cover;
 }
 .main-slider.style-2 .slider-wrapper .slider-controls {
