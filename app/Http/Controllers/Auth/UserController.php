@@ -14,14 +14,15 @@ class UserController extends Controller
      */
     public function getDanhMucSanPham()
     {
-        $loaisanpham = DB::select('select * from loaisanpham');
-        $sanpham = DB::select('select * from sanpham');
-        return view('shop')->with(['loaisanpham' => $loaisanpham,'sanpham'=>$sanpham]);
+        $data = DB::select('select * from loaisanpham');
+
+        return view('shop', ['data' => $data]);
     }
 
     public function getSanPham()
     {
-        $sanpham = DB::select('select * from sanpham');
-       return view('index', ['sanpham' => $sanpham]);
+        $data = DB::select('select * from sanpham');
+
+        return view('shop',['sanpham'=> $data]);
     }
 }
