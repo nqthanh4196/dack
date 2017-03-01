@@ -15,6 +15,8 @@ Route::get('/','UserController@getSanPham');
 
 Route::get('/shop', 'UserController@getDanhMucSanPham');
 
+Route::get('/home','UserController@getDanhSachGiaSanPham;');
+
 Route::get('/contact', function () {
     return view('contact');
 });
