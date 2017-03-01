@@ -173,9 +173,9 @@ class ProductController extends Controller
         $path = $request->image;
 
         $ext = $path->getClientOriginalExtension();
-        if($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg')
+        if($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg' && $text != 'gif')
         {
-            return redirect('product/create')->with('loi','Vui lòng chọn file có đuôi .jpg,.png,.jpeg');
+            return redirect('product/create')->with('loi','Vui lòng chọn file có đuôi .jpg,.png,.jpeg,.gif');
         }
 
         
