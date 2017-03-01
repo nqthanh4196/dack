@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         $loaisanpham = DB::select('select * from loaisanpham');
         $sanpham = DB::select('select * from sanpham');
-        return view('shop')->with(['loaisanpham' => $loaisanpham,'sanpham'=>$sanpham]);
+        return view('shop')->with(['loaisanpham' => $loaisanpham,'loaisanpham'=>$sanpham]);
     }
 
     public function getSanPham()
