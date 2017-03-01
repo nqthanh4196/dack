@@ -11,80 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-	$data= Cart::content();
-    return view('index',['data'=>$data]);
-});
-Route::get('/shop', function(){
-	$data= Cart::content();
-	return view('shop',['data'=>$data]);
-});
+Route::get('/','UserController@getSanPham');
+
+Route::get('/shop', 'UserController@getDanhMucSanPham');
 
 Route::get('/contact', function () {
-	$data= Cart::content();
-    return view('contact',['data'=>$data]);
+    return view('contact');
 });
 
-
-Route::resource('categories','CategoriesController');
-
-Route::resource('classify','ClassifyController');
-
-Route::resource('supplier','SupplierController');
-
-Route::resource('comment','CommentController');
-
-Route::resource('cart','CartController');
-
-Route::get('checkout','CartController@checkout');
-
-Route::get('/cart/{id}/delete','CartController@destroy');
-
-Route::get('/product/search','ProductController@search');
-
-Route::group(['middleware' => ['auth']], function ()
-{
-	
-	Route::get('product/{id}/delete', 'ProductController@delete');
-
-
-	Route::resource('product', 'ProductController',['except' => [
-    'show']]);
-
-    Route::post('password/change','UserController@change');
-
-	Route::get('password/change',function()
-		{
-			return view('auth.passwords.change');
-		});
-
-	Route::post('myaccount','UserController@myaccount');
-
-	Route::get('myaccount',function()
-		{
-			return view('auth.myaccount');
-		});
+Route::get('/single-product', function () {
+    return view('single-product');
 });
-
-Route::resource('product', 'ProductController',['only' => [
-    'show']]);
-
-Auth::routes();
-
-Route::get('captcha-form-validation',array('as'=>'google.get-recaptcha-validation-form','uses'=>'FileController@getCaptchaForm')) ;
-Route::post('captcha-form-validation',array('as'=>'google.post-recaptcha-validation','uses'=>'FileController@postCaptchaForm')) ;
-
-
-Route::get('/logout','HomeController@logout');
-
-Route::get('/home', 'HomeController@index');
-
-Route::get('/login', 'HomeController');
-
-
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
-
-
 

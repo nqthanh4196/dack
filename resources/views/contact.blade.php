@@ -1,5 +1,4 @@
-@extends('layouts.master')
-
+@extends('layout.master')
 @section('content')
         <!-- Main Content -->
         <div class="main-content">
@@ -84,4 +83,6 @@
         <!-- Map Wrapper -->
         <div id="map-wrapper"></div>
 @endsection
-
+</div>
+</body>
+</html>

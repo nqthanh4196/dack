@@ -1,6 +1,5 @@
-@extends('layouts.master')
-
-@section('body')
+@extends('layout.master')
+@section('header')
 <!-- Mobile View -->
 <div class="quick-view-mobile hidden-sm hidden-md hidden-lg">
     <p>We are sorry but Quick View is available on larger devices only.</p>
@@ -96,47 +95,47 @@
                                     <a href="./">Trang chủ</a>
                                 </li>
                                 <li>
-                                    <a href="/shop">Cửa hàng</a>
+                                    <a href="shop">Cửa hàng</a>
                                 </li>
                                 <li>
-                                    <a href="/contact">Liên hệ</a>
+                                    <a href="contact">Liên hệ</a>
                                 </li>
                             </ul>
                         </nav>
                     </div>
+
                     <!-- Shopping Bag -->
                     <div class="shopping-bag">
                         <div class="bag-container">
                             <div class="bag-counter">
                                 <i class="icon icon-bag"></i>
-                                <span class="number"><?php echo Cart::count(); ?></span>
+                                <span class="number">1</span>
                             </div>
-                            <span ><?php echo Cart::subtotal(); ?> VND</span>
+                            <span class="total">450.000 đ</span>
                         </div>
 
                         <!-- Bag Items -->
                         <div class="cart-items-wrapper">
-                        @foreach($data as $item)
                             <div class="cart-items">
                                 <h4>Giỏ hàng</h4>
                                 <ul>
                                     <li>
                                         <div class="image">
-                                            <img src="/{{$item->options->image}}" alt="shopping cart image" />
+                                            <img src="img/chuot-razer.png" alt="shopping cart image" />
                                         </div>
-                                        <p><a href="/product/{{$item->id}}">{{$item->name}}</p>
-                                        <p>Số lượng: {{$item->qty}}</p>
-                                        <p>Giá tiền: {{$item->price}}</p>
+                                        <p><a href="single-product">Chuột Razer Abyssus V2</a></p>
+                                        <p class="color">Đen</p>
+                                        <p>Số lượng: 1</p>
+
                                         <div class="remove">
-                                            <a href="/cart/{{$item->rowId}}/delete" class="remove-item"><i class="icon-cross"></i></a>
-                                            
+                                            <a href="#" class="remove-item"><i class="icon-cross"></i></a>
+                                            <p class="price">450.000 đ</p>
                                         </div>
                                     </li>
                                 </ul>
-                                <p class="sub-total">Thành tiền: {{$item->subtotal}}</p>
-                                <a href="/cart" class="view-bag">Xem giỏ hàng</a>
+                                <p class="sub-total">Thành tiền: 450.000 đ--</p>
+                                <a href="cart.html" class="view-bag">Xem giỏ hàng</a>
                             </div>
-                        @endforeach
                         </div>
                     </div>
 
@@ -144,17 +143,11 @@
                     <div class="menu">
                         <i class="icon icon-menu"></i>
                         <ul>
-                            @if (Auth::guest())
-                                <li><a href="login">Đăng nhập</a></li>
-                                <li><a href="register">Đăng ký</a></li>
-                            @else
-                                <li class="dropdown">
-                                    <a href="#" >{{ Auth::user()->name }} </a>
-                                </li>
-                                <li><a href="logout">Logout</a></li>
-                            @endif
                             <li>
-                                <a href="/product/">Tài khoản của tôi</a>
+                                <a href="login.html">Đăng nhập/Đăng ký</a>
+                            </li>
+                            <li>
+                                <a href="my-account.html">Tài khoản của tôi</a>
                             </li>
                             <li>
                                 <a href="checkout.html">Lịch sử đặt hàng</a>
@@ -163,8 +156,8 @@
                                 <a href="#">Ngôn ngữ</a>
                             </li>
                             <li>
-                                <form class="search-form" method="GET" action=" {{url('product/search')}} ">
-                                    <input type="search" name="search" class="search-input placeholders" placeholder="Search" />
+                                <form class="search-form">
+                                    <input type="search" class="search-input placeholders" placeholder="Search" />
                                     <input type="submit" class="search-submit" value="" />
                                     <i class="icon icon-search"></i>
                                 </form>
@@ -182,7 +175,9 @@
 
     </div>
 </header>
+@endsection
 
+@section('content')
 <!-- Main Content -->
 <div class="content-wrapper">
 
@@ -193,22 +188,22 @@
                 <li>
                     <div class="product-info">
                         <h1>SẢN PHẨM MỚI -50%</h1>
-                         <p>Chuyên cung cấp chuột motospeed chính hãng.<br />Hotline: 0126 357 246.</p>
-                        <a href="/shop" class="theme-btn-1">Bắt đầu mua sắm</a>
+                        <p>Chuyên cung cấp laptop MSI chính hãng.<br />Hotline: 0126 357 246.</p>
+                        <a href="shop-grid.html" class="theme-btn-1">Bắt đầu mua sắm</a>
                     </div>
                 </li>
                 <li>
                     <div class="product-info">
                         <h1>SẢN PHẨM MỚI -50%</h1>
                         <p>Chuyên cung cấp bàn phím cơ chính hãng.<br />Hotline: 0126 357 246.</p>
-                        <a href="/shop" class="theme-btn-1">Bắt đầu mua sắm</a>
+                        <a href="shop-grid.html" class="theme-btn-1">Bắt đầu mua sắm</a>
                     </div>
                 </li>
                 <li>
                     <div class="product-info">
                         <h1>SẢN PHẨM MỚI -50%</h1>
-                        <p>Chuyên cung cấp laptop MSI chính hãng.<br />Hotline: 0126 357 246.</p>
-                        <a href="/shop" class="theme-btn-1">Bắt đầu mua sắm</a>
+                        <p>Chuyên cung cấp chuột motospeed chính hãng.<br />Hotline: 0126 357 246.</p>
+                        <a href="shop-grid.html" class="theme-btn-1">Bắt đầu mua sắm</a>
                     </div>
                 </li>
             </ul>
@@ -216,6 +211,98 @@
             <div class="slider-controls">
                 <span class="prev"></span>
                 <span class="next"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories-box">
+        <div class="bg-wrapper">
+            <div class="container">
+
+                <!-- Section Header -->
+                <div class="section-header">
+                    <h1>CHỌN DANH MỤC SẢN PHẨM</h1>
+                </div>
+
+                <div class="section-box">
+
+                    <!-- Section Caption -->
+                    <h2 class="vertical-text hidden-xs">DANH MỤC SẢN PHẨM</h2>
+
+                    <!-- Section Content -->
+                    <div class="select-category-box">
+
+                        <ul class="horizontal">
+                            <li class="caption direction-right hidden-xs">
+
+                                <i class="direction fa fa-caret-right"></i>
+
+                                <div class="box-caption">
+                                    <p>
+                                        <a href="shop-grid.html">Laptop<br />Gaming
+                                            <span>Chọn<i class="fa fa-long-arrow-right"></i></span>
+                                        </a>
+                                    </p>
+                                </div>
+
+                            </li>
+                            <li class="thumb">
+                                <a href="shop-grid.html">
+                                    <div class="hover"></div>
+                                    <img src="img/laptop-msI.jpg" alt="category preview" />
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul class="horizontal">
+                            <li class="thumb">
+                                <a href="shop-grid.html">
+                                    <div class="hover"></div>
+                                    <img src="img/ban-phim.png" alt="category preview" />
+                                </a>
+                            </li>
+                            <li class="caption direction-left hidden-xs">
+
+                                <i class="direction fa fa-caret-left"></i>
+
+                                <div class="box-caption">
+                                    <p>
+                                        <a href="shop-grid.html">Bàn phím
+                                            <span><i class="fa fa-long-arrow-left"></i>Chọn</span>
+                                        </a>
+                                    </p>
+                                </div>
+
+                            </li>
+                        </ul>
+
+                        <ul class="vertical">
+                            <li class="caption direction-bottom hidden-xs">
+
+                                <i class="direction fa fa-caret-down"></i>
+
+                                <div class="box-caption">
+                                    <p>
+                                        <a href="shop-grid.html">Chuột
+                                            <span>Chọn<i class="fa fa-long-arrow-right"></i></span>
+                                        </a>
+                                    </p>
+                                </div>
+
+                            </li>
+                            <li class="thumb">
+                                <a href="shop-grid.html">
+                                    <div class="hover"></div>
+                                    <img src="img/chuot-steelseries-rival.png" alt="category preview" />
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </section>
@@ -228,9 +315,42 @@
             <div class="section-header">
                 <h1>Sản phẩm mới</h1>
             </div>
+
             <!-- Collection Items Wrapper -->
-            @include('composers.Product')
             <div class="row">
+                @foreach($sanpham as $item)
+                <div class="col-sm-6 col-md-3">
+                    
+                        <div class="product">
+                            <div class="image">
+                                <img src="img/ducky-one-tkl-greyblue-pbt-us-4-jpg.jpg" alt="product-thumbnail" />
+                            </div>
+
+                            <div class="details">
+                                <h3><a href="#">{{$item->ten}}</a></h3>
+                                <div class="price-bag">
+                                    <a href="#" class="add-to-bag"><span>Thêm vào giỏ hàng</span> <i class="icon-bag"></i></a>
+                                    <span class="price">{{$item->giatien}} {{$item->donvitinh}}</span>
+
+                                    <ul>
+                                        <li class="wishlist">
+                                            <a href="#">
+                                                <i class="icon-heart"></i>
+                                                <span>Yêu thích</span>
+                                            </a>
+                                        </li>
+                                        <li class="quick-view-product">
+                                            <a href="#">
+                                                <i class="icon-magnifying-glass"></i>
+                                                <span>Xem</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                 @endforeach
             </div>
         </div>
     </section>
@@ -249,7 +369,36 @@
                 <div class="row row-fit-20">
 
                     <div class="tabs-items">
-                        
+                        @foreach($sanpham as $item)
+                        <div class="product">
+                            <div class="image">
+                                <img src="img/ducky-one-tkl-greyblue-pbt-us-4-jpg.jpg" alt="product-thumbnail" />
+                            </div>
+
+                            <div class="details">
+                                <h3><a href="#">{{$item->ten}}</a></h3>
+                                <div class="price-bag">
+                                    <a href="#" class="add-to-bag"><span>Thêm vào giỏ hàng</span> <i class="icon-bag"></i></a>
+                                    <span class="price">{{$item->giatien}} {{$item->donvitinh}}</span>
+
+                                    <ul>
+                                        <li class="wishlist">
+                                            <a href="#">
+                                                <i class="icon-heart"></i>
+                                                <span>Yêu thích</span>
+                                            </a>
+                                        </li>
+                                        <li class="quick-view-product">
+                                            <a href="#">
+                                                <i class="icon-magnifying-glass"></i>
+                                                <span>Xem</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -259,7 +408,36 @@
 
                     <div class="tabs-items">
 
-                        
+                        @foreach($sanpham as $item)
+                        <div class="product">
+                            <div class="image">
+                                <img src="img/ducky-one-tkl-greyblue-pbt-us-4-jpg.jpg" alt="product-thumbnail" />
+                            </div>
+
+                            <div class="details">
+                                <h3><a href="#">{{$item->ten}}</a></h3>
+                                <div class="price-bag">
+                                    <a href="#" class="add-to-bag"><span>Thêm vào giỏ hàng</span> <i class="icon-bag"></i></a>
+                                    <span class="price">{{$item->giatien}} {{$item->donvitinh}}</span>
+
+                                    <ul>
+                                        <li class="wishlist">
+                                            <a href="#">
+                                                <i class="icon-heart"></i>
+                                                <span>Yêu thích</span>
+                                            </a>
+                                        </li>
+                                        <li class="quick-view-product">
+                                            <a href="#">
+                                                <i class="icon-magnifying-glass"></i>
+                                                <span>Xem</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -268,7 +446,36 @@
 
                     <div class="tabs-items">
 
-                        
+                        @foreach($sanpham as $item)
+                        <div class="product">
+                            <div class="image">
+                                <img src="img/ducky-one-tkl-greyblue-pbt-us-4-jpg.jpg" alt="product-thumbnail" />
+                            </div>
+
+                            <div class="details">
+                                <h3><a href="#">{{$item->ten}}</a></h3>
+                                <div class="price-bag">
+                                    <a href="#" class="add-to-bag"><span>Thêm vào giỏ hàng</span> <i class="icon-bag"></i></a>
+                                    <span class="price">{{$item->giatien}} {{$item->donvitinh}}</span>
+
+                                    <ul>
+                                        <li class="wishlist">
+                                            <a href="#">
+                                                <i class="icon-heart"></i>
+                                                <span>Yêu thích</span>
+                                            </a>
+                                        </li>
+                                        <li class="quick-view-product">
+                                            <a href="#">
+                                                <i class="icon-magnifying-glass"></i>
+                                                <span>Xem</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -282,8 +489,4 @@
         </div>
     </section>
 </div>
-
-@include('layouts.partials.footer')
-
 @endsection
-
